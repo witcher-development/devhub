@@ -1,0 +1,19 @@
+.edit {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 30px 0;
+
+    & > div {
+      width: 48%;
+    }
+
+    &_full-width {
+      composes: edit__row;
+      & > div {
+        width: 100%;
+      }
+    }
+  }
+}

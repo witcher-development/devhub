@@ -4,6 +4,10 @@ import { useParams, useHistory } from 'react-router-dom';
 import { User } from '../types/User';
 import { getUser } from '../client';
 
+import { Button, LinearProgress } from '@material-ui/core';
+
+import style from './UserInfo.module.scss';
+
 const UserInfo: React.FC = () => {
   const { id } = useParams();
   const history = useHistory();
@@ -26,7 +30,26 @@ const UserInfo: React.FC = () => {
     fetchUser();
   }, []);
 
-  return <div>{user ? <p>{user.last_name}</p> : <p>loading</p>}</div>;
+  const goToEditPage = () => {
+    history.push('/edit/' + id);
+  };
+
+  return (
+    <div>
+      {user ? (
+        <div className={style.info}>
+          <p>{user.last_name}</p>
+          <div className={style.info__edit}>
+            <Button variant="contained" color="primary" onClick={goToEditPage}>
+              Edit
+            </Button>
+          </div>
+        </div>
+      ) : (
+        <LinearProgress />
+      )}
+    </div>
+  );
 };
 
 export default UserInfo;

@@ -26,9 +26,9 @@ export const getUser = async (id: number): Promise<User> => {
   }
 };
 
-export const editUser = async (id: number): Promise<User> => {
+export const editUser = async (user: User): Promise<User> => {
   try {
-    const response = await client.put(`${id}`);
+    const response = await client.put(`${user.id}`, user);
     return response.data;
   } catch (e) {
     throw e;

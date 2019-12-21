@@ -2,7 +2,7 @@ export interface User {
   id: number;
   first_name: string;
   last_name: string;
-  birth_data: string;
+  birth_date: string;
   gender: string;
   job: string;
   biography: string;
@@ -12,7 +12,7 @@ export interface User {
 export interface NewUser {
   first_name: string;
   last_name: string;
-  birth_data: string;
+  birth_date: string;
   gender: string;
   job: string;
   biography: string;
