@@ -1,5 +1,64 @@
 .info {
 
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	h1 {
+		display: flex;
+
+		font-size: 20px;
+		font-weight: 500;
+	}
+
+	&__label {
+		width: 20px;
+		height: 20px;
+
+		border-radius: 50%;
+		background-color: #bdbdbd;
+
+		position: relative;
+
+		&_active {
+			composes: info__label;
+
+			&:before {
+				content: '';
+
+				display: block;
+				width: 10px;
+				height: 10px;
+
+				border-radius: 50%;
+				background-color: #76ff03;
+
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+
+	&__section {
+		padding: 15px 0 10px;
+
+		h3 {
+			margin: 0;
+			margin-bottom: 10px;
+
+			font-size: 14px;
+			font-weight: 400;
+		}
+		p {
+			margin: 0;
+
+			font-size: 17px;
+		}
+	}
 
 	&__edit {
 		display: flex;
