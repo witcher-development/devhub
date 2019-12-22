@@ -4,13 +4,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { User } from '../types/User';
 import { getUser } from '../client';
 
-import {
-  Button,
-  LinearProgress,
-  Typography,
-  Divider,
-  Tooltip,
-} from '@material-ui/core';
+import { Button, LinearProgress, Divider, Tooltip } from '@material-ui/core';
 
 import style from './UserInfo.module.scss';
 

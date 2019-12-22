@@ -25,7 +25,6 @@ const UsersList: React.FC = () => {
   const fetchUsers = async () => {
     try {
       const users: User[] = await getUsers();
-      console.log(users);
       setUsers(users);
     } catch (e) {
       alert('In get users list. ' + e);
